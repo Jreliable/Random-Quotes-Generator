@@ -75,7 +75,7 @@ var quotes = [
 ];
 // Create the getRandomQuuote function and name it getRandomQuote
 function getRandomQuote() {
-  var quoteIndex = math.floor(math.random() * quotes.length);
+  var quoteIndex = Math.floor(Math.random() * quotes.length);
   var splicedQuote = quotes.splice(quoteIndex, 1)[0];
   usedQuotes.push(splicedQuote);
   if (quotes.length === 0) {
