@@ -95,7 +95,7 @@ function printQuote() {
   + '<span class="year">' + selectedRandomQuote.year + '</span>' + '<span class="category">'
   + selectedRandomQuote.category + '</span>' + '</p>';
   document.getElementById('quote-box').innerHTML = html;
-  setBackgroundColor();
+  
   console.log("Number of viewed quotes: " + viewedQuotes.length);
   console.log("Number of quotes remaining: " + quotes.length);
 }
