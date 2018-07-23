@@ -1,4 +1,8 @@
+document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+
+
 // FSJS - Random Quote Generator
+
 var usedQuotes = []
 // Create the array of quote objects and name it quotes
 var quotes = [
@@ -85,6 +89,12 @@ function getRandomQuote() {
   return splicedQuote;
 }
 
+function setBackgroundColor() {
+  var hexColorsArray = ['#FF0000', '#008000', '#0000FF', '#800080', '#800000', '#FF00FF', '#99ccff', '#00cc66', '#ff6666', '#3366ff'];
+  var selectedHexColor = hexColorsArray[Math.floor(Math.random() * hexColorsArray.length)];
+  document.getElementById('background-color').style.background = selectedHexColor;
+}
+
 
 // Create the printQuote funtion and name it printQuote
 function printQuote() {
@@ -95,13 +105,17 @@ function printQuote() {
   + '<span class="year">' + selectedRandomQuote.year + '</span>' + '<span class="category">'
   + selectedRandomQuote.category + '</span>' + '</p>';
   document.getElementById('quote-box').innerHTML = html;
-  
+  setBackgroundColor();
   console.log("Number of viewed quotes: " + viewedQuotes.length);
   console.log("Number of quotes remaining: " + quotes.length);
+}
+function changeQuote() {
+window.setInterval(printQuote, 5000);
 }
 // cal the functions
 getRandomQuote();
 printQuote();
+setBackgroundColor();
+changeQuote();
 // This event listener will respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
-document.getElementById('loadQuote').addEventListener("click", printQuote, false);
